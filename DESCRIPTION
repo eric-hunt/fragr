@@ -1,0 +1,13 @@
+Package: fragr
+Title: an R package for wrangling capillary electrophoresis data
+Version: 0.1.0
+Authors@R: 
+    person(given = "Eric",
+           family = "Hunt",
+           role = c("aut", "cre"),
+           email = "52219938+eric-hunt@users.noreply.github.com",
+           comment = c(ORCID = "0000-0002-6891-8294"))
+Description: 
+License: 
+Encoding: UTF-8
+LazyData: true
