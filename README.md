@@ -1,5 +1,11 @@
 
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
 # fragr <img src='man/figures/logo.png' align="right" height="139" />
+
+<!-- badges: start -->
+
+<!-- badges: end -->
 
 ## Overview
 
@@ -17,3 +23,33 @@ PeakScanner.
   - `act_offsense()` defines all other activity on the same strand
   - `act_offanti()` for two-dye experiments, defines activity on the
     opposite strand
+
+## Installation
+
+<!--
+You can install the released version of fragr from [CRAN](https://CRAN.R-project.org) with:
+
+``` r
+install.packages("fragr")
+```
+-->
+
+You can install the development version from
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("eric-hunt/fragr")
+```
+
+<!--
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+
+```r
+## library(fragr)
+## basic example code
+```
+-->
