@@ -1,14 +1,29 @@
 Package: fragr
 Title: an R package for wrangling capillary electrophoresis data
-Version: 0.1.0
+Version: 0.0.0.75
 Authors@R: 
     person(given = "Eric",
            family = "Hunt",
            role = c("aut", "cre"),
            email = "52219938+eric-hunt@users.noreply.github.com",
            comment = c(ORCID = "0000-0002-6891-8294"))
-Description: 
-License: 
+Description: an R package for wrangling capillary electrophoresis data
+License: none
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.1.1
+Imports: 
+    magrittr,
+    readr,
+    tibble,
+    tidyr,
+    dplyr,
+    stringr,
+    purrr,
+    rlang,
+    ggplot2,
+    broom,
+    glue,
+    scales
+Suggests: 
+    feather
