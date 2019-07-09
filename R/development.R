@@ -21,15 +21,16 @@ parse_migmodel <- function(df_list, channels, search_var, search_pattern, substr
   df <- df_list %>%
     dplyr::bind_rows(.id = "file_name") %>%
     tidyr::nest(-c(file_name, csv_name, ABIF_name, sample_id, dye)) %>%
-    dplyr::filter(dye %in% !! dye_selection) %>%
+    dplyr::filter(dye %in% !!dye_selection) %>%
     dplyr::mutate(
-      bp_actual = as.integer(stringr::str_extract(.data[[rlang::as_name(search_var)]], !! search_pattern))
+      bp_actual = as.integer(stringr::str_extract(.data[[rlang::as_name(search_var)]], !!search_pattern))
       # bp_actual = as.integer(stringr::str_extract(.$UQ(search_var), "\\d{2}")) # alternate unquote method
     ) %>%
     dplyr::mutate(
       bp_called = purrr::map_dbl(data, ~ .x %>%
-                                   dplyr::top_n(1, height) %>%
-                                   dplyr::pull(bp))
+        dplyr::top_n(1, height) %>%
+        dplyr::top_n(1, scan_area) %>%
+        dplyr::pull(bp))
     ) %>%
     dplyr::filter(bp_called < substrate_cutoff) %>%
     dplyr::filter(abs(bp_actual - bp_called) < limit)
@@ -68,11 +69,8 @@ parse_migmodel <- function(df_list, channels, search_var, search_pattern, substr
         paste0("(R)^2 = ", round(glance[["r.squared"]], digits = 3)),
         sep = "\n"
       )
-    ) +
-    ggplot2::scale_x_continuous(
-      labels = (function(x) round(exp(x))),
-      breaks = scales::pretty_breaks()
-    )
+    )+
+    ggplot2::scale_x_continuous(breaks = scales::pretty_breaks())
 }
 # For testing:
 # read_PeakScanner("~/Desktop/Data Consolidation/data_raw/Kevin_comp/noETSSB/data/") %>%
