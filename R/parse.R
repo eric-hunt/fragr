@@ -74,7 +74,7 @@ parse_activity <- function(nested_df, reg_vars, reg_limit, substrate_cutoff, top
       (function(v) {
         dplyr::if_else(
           length(v) == 0,
-          as.numeric(NA),
+          as.numeric(0),
           round(mean(v), digits = 2),
           missing = as.numeric(NA)
         )

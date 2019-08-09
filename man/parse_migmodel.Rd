@@ -10,7 +10,7 @@ parse_migmodel(df_list, channels, search_var, search_pattern,
 \arguments{
 \item{df_list}{a list of data frames containing CE data imported with \code{fragr::read_PeakScanner}}
 
-\item{channels}{the one letter channel/dye code (as a character vector) for which to build a migration regression model}
+\item{channels}{the one letter channel/dye code(s) (as a character vector) for which to build a migration regression model}
 
 \item{search_var}{a metadata-containing variable which contains the theoretical product size}
 

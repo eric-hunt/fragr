@@ -5,7 +5,7 @@
 #' \code{parse_migmodel}
 #'
 #' @param df_list a list of data frames containing CE data imported with \code{fragr::read_PeakScanner}
-#' @param channels the one letter channel/dye code (as a character vector) for which to build a migration regression model
+#' @param channels the one letter channel/dye code(s) (as a character vector) for which to build a migration regression model
 #' @param search_var a metadata-containing variable which contains the theoretical product size
 #' @param search_pattern a regex pattern for extracting the theoretical product size 'search_var'
 #' @param substrate_cutoff a numeric value indicating the bp size above which all peaks should represent product
