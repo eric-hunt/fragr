@@ -20,7 +20,7 @@ parse_migmodel <- function(df_list, channels, search_var, search_pattern, substr
 
   df <- df_list %>%
     dplyr::bind_rows(.id = "file_name") %>%
-    tidyr::nest(-c(file_name, csv_name, ABIF_name, sample_id, dye)) %>%
+    tidyr::nest(data = -c(file_name, csv_name, ABIF_name, sample_id, dye)) %>%
     dplyr::filter(dye %in% !!dye_selection) %>%
     dplyr::mutate(
       bp_actual = as.integer(stringr::str_extract(.data[[rlang::as_name(search_var)]], !!search_pattern))

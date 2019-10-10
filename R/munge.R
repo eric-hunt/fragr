@@ -9,22 +9,22 @@ munge_subfix <- function(nested_df) {
   nested_df %>%
     dplyr::mutate(
       data = data %>%
-        purrr::map(
+        purrr::modify(
           ~ .x %>%
-            tidyr::nest(-dye, -label, .key = "subdata") %>%
+            tidyr::nest(subdata = -c(dye, label)) %>%
             dplyr::mutate(subdata = dplyr::if_else(
               label == "substrate",
-              subdata %>% purrr::map(dplyr::mutate, rel_area = sum(rel_area)),
+              subdata %>% purrr::modify(dplyr::mutate, rel_area = sum(rel_area)),
               subdata
             )) %>%
             dplyr::mutate(subdata = dplyr::if_else(
               label == "substrate",
-              subdata %>% purrr::map(dplyr::top_n, 1, height),
+              subdata %>% purrr::modify(dplyr::top_n, 1, height),
               subdata
             )) %>%
             dplyr::mutate(subdata = dplyr::if_else(
               label == "substrate",
-              subdata %>% purrr::map(~ .x %>%
+              subdata %>% purrr::modify(~ .x %>%
                 dplyr::mutate(rel_area = dplyr::if_else(
                   rel_area > 1,
                   1.00,
@@ -32,7 +32,7 @@ munge_subfix <- function(nested_df) {
                 ))),
               subdata
             )) %>%
-            tidyr::unnest()
+            tidyr::unnest(subdata)
         )
     )
 }
