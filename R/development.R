@@ -33,10 +33,12 @@ parse_migmodel <- function(df_list, channels, search_var, search_pattern, substr
         dplyr::pull(bp))
     ) %>%
     dplyr::filter(bp_called < substrate_cutoff) %>%
-    dplyr::filter(abs(bp_actual - bp_called) < limit)
+    dplyr::filter(abs(bp_actual - bp_called) < limit)# %>%
+    # dplyr::mutate(bp_actual2 = bp_actual^2) # for quadratic if better?
 
   model <- df %>%
     lm(bp_called ~ bp_actual, data = .)
+    # lm(bp_called ~ bp_actual + bp_actual2, data = .) # for quadratic if better?
   glance <- broom::glance(model)
   tidy <- broom::tidy(model) %>% tibble::column_to_rownames(var = "term")
 
