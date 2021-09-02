@@ -1,7 +1,5 @@
 #' Generate regression model for CE migration
 #'
-#'
-#'
 #' \code{parse_migmodel}
 #'
 #' @param df_list a list of data frames containing CE data imported with \code{fragr::read_PeakScanner}

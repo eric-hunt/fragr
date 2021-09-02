@@ -7,7 +7,8 @@
 munge_subfix(nested_df)
 }
 \arguments{
-\item{nested_df}{a nested data frame of CE data with all peak data lying in the list column 'data'}
+\item{nested_df}{a nested data frame of CE data with all peak data lying in
+the list column 'data'}
 }
 \value{
 returns the data frame with the product peak(s) merged into one peak

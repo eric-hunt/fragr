@@ -6,12 +6,12 @@
 \alias{fragr-package}
 \title{fragr: an R package for wrangling capillary electrophoresis data}
 \description{
-\if{html}{\figure{logo.png}{options: align='right'}}
+\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
 an R package for wrangling capillary electrophoresis data
 }
 \author{
-\strong{Maintainer}: Eric Hunt \email{52219938+eric-hunt@users.noreply.github.com} (0000-0002-6891-8294)
+\strong{Maintainer}: Eric Hunt \email{52219938+eric-hunt@users.noreply.github.com} (\href{https://orcid.org/0000-0002-6891-8294}{ORCID})
 
 }
 \keyword{internal}

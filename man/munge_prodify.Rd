@@ -7,13 +7,15 @@
 munge_prodify(nested_df, substrate_cutoff)
 }
 \arguments{
-\item{nested_df}{a nested data frame of CE data with all peak data lying in the list column 'data'}
+\item{nested_df}{a nested data frame of CE data with all peak data lying in
+the list column 'data'}
 
-\item{substrate_cutoff}{a numeric value indicating the bp size above which all peaks should represent product}
+\item{substrate_cutoff}{a numeric value indicating the bp size above which
+all peaks should represent product}
 }
 \value{
-returns the data frame relative data expressed in terms of percent product formed,
-(i.e. 100% substrate will now be 0% product)
+returns the data frame relative data expressed in terms of
+percent product formed (i.e. 100% substrate will now be 0% product)
 }
 \description{
 \code{munge_prodify}

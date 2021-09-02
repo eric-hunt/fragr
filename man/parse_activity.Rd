@@ -4,8 +4,14 @@
 \alias{parse_activity}
 \title{Determine activity according to product formed}
 \usage{
-parse_activity(nested_df, reg_vars, reg_limit, substrate_cutoff,
-  top_n = 5, window_size = 2)
+parse_activity(
+  nested_df,
+  reg_vars,
+  reg_limit,
+  substrate_cutoff,
+  top_n = 5,
+  window_size = 2
+)
 }
 \arguments{
 \item{nested_df}{a nested data frame of CE data with all peak data lying in the list column 'data'}

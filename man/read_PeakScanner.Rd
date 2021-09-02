@@ -4,7 +4,7 @@
 \alias{read_PeakScanner}
 \title{Import PeakScanner *combined table* .csv files into R}
 \usage{
-read_PeakScanner(directory_path, pattern = NULL, clean = TRUE)
+read_PeakScanner(directory_path, pattern = NULL, type = "legacy")
 }
 \arguments{
 \item{directory_path}{a path to a directory containing the .csv files}
@@ -12,8 +12,8 @@ read_PeakScanner(directory_path, pattern = NULL, clean = TRUE)
 \item{pattern}{a regex pattern for selecing files in the directory,
 defaults to reading all .csv files present}
 
-\item{clean}{an opinionated removal of some default PeakScanner variables,
-defaults to TRUE}
+\item{type}{a character string, either 'legacy' or 'cloud' indicating where
+the file was generated (desktop app or online app); defaults to 'legacy'}
 }
 \value{
 generates a named list of tibbles,

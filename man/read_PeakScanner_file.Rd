@@ -4,13 +4,13 @@
 \alias{read_PeakScanner_file}
 \title{Import single PeakScanner *combined table* .csv file into R}
 \usage{
-read_PeakScanner_file(file_path, clean = TRUE)
+read_PeakScanner_file(file_path, type = "legacy")
 }
 \arguments{
 \item{file_path}{a path to a directory containing the .csv files}
 
-\item{clean}{an opinionated removal of some default PeakScanner variables,
-defaults to TRUE}
+\item{type}{a character string, either 'legacy' or 'cloud' indicating where
+the file was generated (desktop app or online app); defaults to 'legacy'}
 }
 \value{
 generates a named list of tibbles,

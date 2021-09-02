@@ -4,8 +4,14 @@
 \alias{parse_migmodel}
 \title{Generate regression model for CE migration}
 \usage{
-parse_migmodel(df_list, channels, search_var, search_pattern,
-  substrate_cutoff, limit = 10)
+parse_migmodel(
+  df_list,
+  channels,
+  search_var,
+  search_pattern,
+  substrate_cutoff,
+  limit = 10
+)
 }
 \arguments{
 \item{df_list}{a list of data frames containing CE data imported with \code{fragr::read_PeakScanner}}
@@ -25,8 +31,5 @@ defaults to ten (10) unless otherwise specified}
 returns a model plot and list of variables..
 }
 \description{
-Generate regression model for CE migration
-}
-\details{
 \code{parse_migmodel}
 }
