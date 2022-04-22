@@ -23,7 +23,7 @@ munge_subfix <- function(nested_df) {
             )) %>%
             dplyr::mutate(subdata = dplyr::if_else(
               label == "substrate",
-              subdata %>% purrr::modify(dplyr::top_n, 1, height),
+              subdata %>% purrr::modify(dplyr::slice_max, height, n = 1),
               subdata
             )) %>%
             dplyr::mutate(subdata = dplyr::if_else(
@@ -49,14 +49,12 @@ munge_subfix <- function(nested_df) {
 #'
 #' @param nested_df a nested data frame of CE data with all peak data lying in
 #' the list column 'data'
-#' @param substrate_cutoff a numeric value indicating the bp size above which
-#' all peaks should represent product
 #' @return returns the data frame relative data expressed in terms of
 #' percent product formed (i.e. 100% substrate will now be 0% product)
 #' @export
 # munge_prodify <- function(nested_df, reg_vars, reg_limit, substrate_cutoff) {
-munge_prodify <- function(nested_df, substrate_cutoff) {
-  for (i in seq_along(nested_df[["prod_size"]])) {
+munge_prodify <- function(nested_df) {
+  for (i in seq_along(nested_df[[1]])) {
     nested_df[["data"]][[i]] <- nested_df[["data"]][[i]] %>%
       dplyr::group_by(dye) %>%
       dplyr::mutate(
