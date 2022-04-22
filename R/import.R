@@ -100,13 +100,13 @@ read_PeakScanner <- function(directory_path, pattern = NULL, type = "legacy") {
 
   cloud_col_info <- list(
     col_types = readr::cols_only(
-      "Sample File Name" = "c",
+      "Sample Filename" = "c",
       "Dye Color" = "c",
-      "Dye , Sample Peak" = "c",
+      "Dye, Sample Peak" = "c",
       "Size" = "d",
       "Height" = "d",
-      "Area(Data Point)" = "d",
-      "Area(Base Pairs)" = "d",
+      "Area (Data Point)" = "d",
+      "Area (Base Pairs)" = "d",
       "Data Point" = "d",
       "Begin Point (Data Point)" = "d",
       "End Point (Data Point)" = "d",
@@ -114,13 +114,13 @@ read_PeakScanner <- function(directory_path, pattern = NULL, type = "legacy") {
       "End Point (Base Pairs)" = "d"
     ),
     col_switch = c(
-      ABIF_name = "Sample File Name",
+      ABIF_name = "Sample Filename",
       dye_color = "Dye Color",
-      dye_peak = "Dye , Sample Peak",
+      dye_peak = "Dye, Sample Peak",
       bp = "Size",
       height = "Height",
-      scan_area = "Area(Data Point)",
-      bp_area = "Area(Base Pairs)",
+      scan_area = "Area (Data Point)",
+      bp_area = "Area (Base Pairs)",
       scan = "Data Point",
       scan_begin = "Begin Point (Data Point)",
       scan_end = "End Point (Data Point)",
@@ -294,13 +294,13 @@ read_PeakScanner_file <- function(file_path, type = "legacy") {
 
   cloud_col_info <- list(
     col_types = readr::cols_only(
-      "Sample File Name" = "c",
+      "Sample Filename" = "c",
       "Dye Color" = "c",
-      "Dye , Sample Peak" = "c",
+      "Dye, Sample Peak" = "c",
       "Size" = "d",
       "Height" = "d",
-      "Area(Data Point)" = "d",
-      "Area(Base Pairs)" = "d",
+      "Area (Data Point)" = "d",
+      "Area (Base Pairs)" = "d",
       "Data Point" = "d",
       "Begin Point (Data Point)" = "d",
       "End Point (Data Point)" = "d",
@@ -308,13 +308,13 @@ read_PeakScanner_file <- function(file_path, type = "legacy") {
       "End Point (Base Pairs)" = "d"
     ),
     col_switch = c(
-      ABIF_name = "Sample File Name",
+      ABIF_name = "Sample Filename",
       dye_color = "Dye Color",
-      dye_peak = "Dye , Sample Peak",
+      dye_peak = "Dye, Sample Peak",
       bp = "Size",
       height = "Height",
-      scan_area = "Area(Data Point)",
-      bp_area = "Area(Base Pairs)",
+      scan_area = "Area (Data Point)",
+      bp_area = "Area (Base Pairs)",
       scan = "Data Point",
       scan_begin = "Begin Point (Data Point)",
       scan_end = "End Point (Data Point)",
