@@ -364,3 +364,22 @@ read_PeakScanner_file <- function(file_path, type = "legacy", delim = ",") {
 
   return(file)
 }
+
+
+ebase_format <- function(peaks_table) {
+  peaks_table |>
+    dplyr::select(
+      csv_name,
+      sample_name = sample_id,
+      result_dye = dye,
+      scan,
+      bp,
+      height,
+      area = scan_area,
+      area_bp = bp_area
+    ) |>
+    dplyr::mutate(
+      peak_percentage = area / sum(area),
+      .by = sample_name
+    )
+}
