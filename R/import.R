@@ -204,7 +204,7 @@ read_PeakScanner <- function(directory_path, pattern = NULL, type = "legacy") {
 #' @return generates a named list of tibbles,
 #' each neamed element is one *combined table* named with its origin file path
 #' @export
-read_PeakScanner_file <- function(file_path, type = "legacy") {
+read_PeakScanner_file <- function(file_path, type = "legacy", delim = ",") {
   if (!(type %in% c("legacy", "cloud"))) {
     stop("Arg `type` must be either 'legacy' (for desktop app) or 'cloud'.")
   }
@@ -347,7 +347,7 @@ read_PeakScanner_file <- function(file_path, type = "legacy") {
 
   # This imports one single file, then renames the columns,
   # and separates the dye/peak column
-  file <- readr::read_csv(file_path, col_types = col_types) %>%
+  file <- readr::read_delim(file_path, delim = delim, col_types = col_types) %>%
     dplyr::rename(!!!col_switch) %>%
     dplyr::select(col_order) %>%
     tidyr::separate(
